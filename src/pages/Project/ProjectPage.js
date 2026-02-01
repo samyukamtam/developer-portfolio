@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import { AiOutlineHome } from "react-icons/ai";
 
-import './ProjectPage.css'
+import '../Blog/BlogPage.css'
 import { SingleProject } from '../../components';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { projectsData } from '../../data/projectsData'
@@ -68,22 +68,22 @@ function ProjectPage() {
     const classes = useStyles();
 
     return (
-        <div className="projectPage" style={{backgroundColor: theme.secondary}}>
+        <div className="blogPage" style={{backgroundColor: theme.secondary}}>
             <Helmet>
                 <title>{headerData.name} | Projects</title>
             </Helmet>
-            <div className="projectPage-header" style={{backgroundColor:theme.primary}}>
+            <div className="blogPage--header" style={{backgroundColor:theme.primary}}>
                 <Link to="/">
                         <AiOutlineHome className={classes.home}/>
                 </Link>
                 <h1 style={{color: theme.secondary}}>Projects</h1>
             </div>
-           <div className="projectPage-container">
-               <div className="projectPage-search">
+           <div className="blogPage--container">
+               <div className="blog--search">
                    <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search project..." className={classes.search} />
                </div>
-               <div className="project-container">
-                   <Grid className="project-grid" container direction="row" alignItems="center" justifyContent="center">
+               <div className="blogs--container">
+                   <Grid className="blog-grid" container direction="column" alignItems="center" justifyContent="center">
                         {filteredArticles.map(project => (
                             <SingleProject
                                 theme={theme}
@@ -93,7 +93,7 @@ function ProjectPage() {
                                 desc={project.projectDesc}
                                 tags={project.tags}
                                 code={project.code}
-                                demo={project.demo}
+                                website={project.demo}
                                 image={project.image} 
                             />
                         ))}

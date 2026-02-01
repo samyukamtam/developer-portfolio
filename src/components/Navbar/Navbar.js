@@ -241,7 +241,7 @@ function Navbar() {
                                         className={classes.drawerIcon}
                                     />
                                     <span className={classes.drawerLinks}>
-                                        Services
+                                        Positions of Responsibility
                                     </span>
                                 </div>
                             </NavLink>
@@ -259,7 +259,7 @@ function Navbar() {
                                         className={classes.drawerIcon}
                                     />
                                     <span className={classes.drawerLinks}>
-                                        Blog
+                                        Research
                                     </span>
                                 </div>
                             </NavLink>

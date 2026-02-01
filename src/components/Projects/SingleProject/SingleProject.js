@@ -1,12 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { FaPlay, FaCode } from 'react-icons/fa';
+import { FiGlobe } from 'react-icons/fi';
+import { FaCode } from 'react-icons/fa';
 import { Fade } from 'react-awesome-reveal';
 
 import placeholder from '../../../assets/png/placeholder.png';
 import './SingleProject.css';
 
-function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
+function SingleProject({ id, name, desc, tags, code, demo, image, theme, professor, details, website }) {
     const useStyles = makeStyles((t) => ({
         iconBtn: {
             display: 'flex',
@@ -50,25 +51,27 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                     </h2>
                     <img src={image ? image : placeholder} alt={name} />
                     <div className='project--showcaseBtn'>
-                        <a
-                            href={demo}
-                            target='_blank'
-                            rel='noreferrer'
-                            className={classes.iconBtn}
-                            aria-labelledby={`${name
-                                .replace(' ', '-')
-                                .toLowerCase()} ${name
-                                .replace(' ', '-')
-                                .toLowerCase()}-demo`}
-                        >
-                            <FaPlay
-                                id={`${name
+                        {website && (
+                            <a
+                                href={website}
+                                target='_blank'
+                                rel='noreferrer'
+                                className={classes.iconBtn}
+                                aria-labelledby={`${name
                                     .replace(' ', '-')
-                                    .toLowerCase()}-demo`}
-                                className={classes.icon}
-                                aria-label='Demo'
-                            />
-                        </a>
+                                    .toLowerCase()} ${name
+                                    .replace(' ', '-')
+                                    .toLowerCase()}-website`}
+                            >
+                                <FiGlobe
+                                    id={`${name
+                                        .replace(' ', '-')
+                                        .toLowerCase()}-website`}
+                                    className={classes.icon}
+                                    aria-label='Website'
+                                />
+                            </a>
+                        )}
                         <a
                             href={code}
                             target='_blank'
@@ -90,15 +93,35 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                         </a>
                     </div>
                 </div>
-                <p
+                <div
                     className='project--desc'
                     style={{
                         background: theme.secondary,
                         color: theme.tertiary,
                     }}
                 >
-                    {desc}
-                </p>
+                    {Array.isArray(desc) ? (
+                        <ul className='project--details'>
+                            {desc.map((item, idx) => (
+                                <li key={idx}>{item}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>{desc}</p>
+                    )}
+                    {professor && (
+                        <p className='project--professor'>
+                            <strong>Professor:</strong> {professor}
+                        </p>
+                    )}
+                    {Array.isArray(details) && details.length > 0 && (
+                        <ul className='project--details'>
+                            {details.map((item, idx) => (
+                                <li key={idx}>{item}</li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
                 <div
                     className='project--lang'
                     style={{

@@ -58,6 +58,19 @@
     font-family: var(--primaryFont);
 }
 
+.about-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.25rem;
+    color: #e0d9d9;
+    font-family: var(--primaryFont);
+}
+
+.about-paragraph {
+    margin: 0;
+}
+
 .about-img {
     margin-top: 40px;
     pointer-events: none;
@@ -75,6 +88,10 @@
       margin-bottom: 30px;
     }
     .about-description > p {
+      font-size: 1.15rem;
+    }
+
+    .about-paragraphs {
       font-size: 1.15rem;
     }
 
@@ -111,6 +128,10 @@
     }
 
     .about-description > p {
+        font-size: 1.1rem;
+    }
+
+    .about-paragraphs {
         font-size: 1.1rem;
     }
 

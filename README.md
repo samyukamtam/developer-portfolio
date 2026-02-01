@@ -35,11 +35,17 @@
     - SKILLS
     - EXPERIENCE
     - PROJECTS 
-    - Achievements <br />
-- SERVICES 
-    - TESTIMONIALS <br />
-- BLOG
+    - Publications <br />
+- Positions of Responsibility 
+    - Miscellaneous <br />
+- Research
 - CONTACTS 
+
+## Custom section labels
+- Achievements -> Publications
+- Blog -> Research
+- Services -> Positions of Responsibility
+- Testimonials -> Miscellaneous
 
 <br /><br />
 

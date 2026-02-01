@@ -1,7 +1,7 @@
 .single-service {
     box-shadow: 4px 4px 8px rgba(36, 3, 3, 0.2);
-    width: 180px;
-    height: 180px;
+    width: 260px;
+    height: 240px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
 
 .service-content {
     position: relative;
-    height: 150px;
+    height: 210px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,7 +27,7 @@
 
 .service-icon {
     position: absolute;
-    top: 15%;
+    top: 10%;
     /* transform: translateY(-50%); */
 }
 
@@ -71,10 +71,10 @@
     
 }
 
-.service-content > h4 {
+.service-title {
     position: absolute;
-    top: 60%;
-    height: 60px;
+    top: 36%;
+    height: 64px;
 
     display: flex;
     align-items: center;
@@ -83,10 +83,38 @@
     font-family: var(--primaryFont);
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
-    line-height: 110%;
+    line-height: 1.2;
     color: #000000;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.service-date {
+    position: absolute;
+    top: 66%;
+    font-family: var(--primaryFont);
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+}
+
+.service-desc {
+    position: absolute;
+    top: 79%;
+    max-width: 85%;
+    font-family: var(--primaryFont);
+    font-weight: 500;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.2;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 @media screen and (max-width: 800px) {

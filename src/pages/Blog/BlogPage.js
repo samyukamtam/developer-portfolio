@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { AiOutlineHome } from "react-icons/ai";
 
 import './BlogPage.css'
-import { SingleBlog } from '../../components'
+import ResearchCard from '../../components/Blog/ResearchCard'
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { blogData } from '../../data/blogData'
 import { headerData } from '../../data/headerData'
@@ -71,30 +71,32 @@ function BlogPage() {
     return (
         <div className="blogPage" style={{backgroundColor: theme.secondary}}>
             <Helmet>
-                <title>{headerData.name} | Blog</title>
+                <title>{headerData.name} | Research</title>
             </Helmet>
             <div className="blogPage--header" style={{backgroundColor: theme.primary}}>
                 <Link to="/">
                     <AiOutlineHome className={classes.home}/>
                 </Link>
-                <h1 style={{color: theme.secondary}}>Blogs</h1>
+                <h1 style={{color: theme.secondary}}>Research</h1>
             </div>
             <div className="blogPage--container">
                 <div className="blog--search">
-                    <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Seach blog..." className={classes.search}/>
+                    <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search research..." className={classes.search}/>
                 </div>
                 <div className="blogs--container">
-                    <Grid className="blog-grid" container direction="row" alignItems="center" justifyContent="center">
+                    <Grid className="blog-grid" container direction="column" alignItems="center" justifyContent="center">
                         {filteredArticles.reverse().map(blog => (
-                            <SingleBlog 
-                                theme={theme}
-                                title={blog.title}
-                                desc={blog.description}
-                                date={blog.date}
-                                image={blog.image}
-                                url={blog.url}
+                            <ResearchCard
                                 key={blog.id}
                                 id={blog.id}
+                                title={blog.title}
+                                date={blog.date}
+                                professor={blog.professor}
+                                tools={blog.tools}
+                                details={blog.details}
+                                image={blog.image}
+                                url={blog.url}
+                                code={blog.code}
                             />
                         ))}
                     </Grid>

@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import { HiArrowRight } from "react-icons/hi";
 
-import './Blog.css';
+import '../Projects/Projects.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { blogData } from '../../data/blogData'
-import SingleBlog from './SingleBlog/SingleBlog';
+import SingleProject from '../Projects/SingleProject/SingleProject';
 
 
 function Blog() {
@@ -43,36 +43,35 @@ function Blog() {
     return (
         <>
             {blogData.length > 0 && (
-                <div className="blog" id="blog" style={{backgroundColor: theme.secondary}}>
-                    <div className="blog--header">
-                        <h1 style={{color: theme.primary}}>Blog</h1>
+                <div className="projects" id="blog" style={{backgroundColor: theme.secondary}}>
+                    <div className="projects--header">
+                        <h1 style={{color: theme.primary}}>Research</h1>
                     </div>
-                    <div className="blog--body">
-                        <div className="blog--bodyContainer">
+                    <div className="projects--body">
+                        <div className="projects--bodyContainer">
                             {blogData.slice(0, 3).reverse().map(blog => (
-                                <SingleBlog 
+                                <SingleProject
                                     theme={theme}
-                                    title={blog.title}
-                                    desc={blog.description}
-                                    date={blog.date}
-                                    image={blog.image}
-                                    url={blog.url}
                                     key={blog.id}
                                     id={blog.id}
+                                    name={blog.title}
+                                    desc={blog.description}
+                                    tags={[...(blog.tools || [])]}
+                                    website={blog.url}
+                                    code={blog.code}
+                                    image={blog.image}
                                 />
                             ))}
                         </div> 
 
-                        {blogData.length > 3 && (
-                            <div className="blog--viewAll">
-                                <Link to="/blog">
-                                    <button className={classes.viewAllBtn}>
-                                        View All
-                                        <HiArrowRight className={classes.viewArr} />
-                                    </button>
-                                </Link>
-                            </div>
-                        )}
+                        <div className="projects--viewAll">
+                            <Link to="/blog">
+                                <button className={classes.viewAllBtn}>
+                                    Expand
+                                    <HiArrowRight className={classes.viewArr} />
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             )}

@@ -30,17 +30,18 @@
 .experience-card {
     display: flex;
     flex-direction: row;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: flex-start;
-    width: 90%;
-    height: 140px;
+    width: 100%;
+    max-width: 760px;
     padding: 1.5rem;
     border-radius: 20px;
     margin-bottom: 1.5rem;
     transition: background-color 200ms ease-in-out;
+    gap: 0.75rem;
 }
 
-.expcard-img {
+.expcard-icon {
     border-radius: 50%;
     width: 55px;
     height: 55px;
@@ -50,13 +51,14 @@
     flex-shrink: 0;
 }
 
-.expcard-img > img {
-    width: 36px;
-    pointer-events: none;
+.expcard-iconSvg {
+    width: 28px;
+    height: 28px;
 }
 
 .experience-details {
-    margin-left: 0.6rem;
+    margin-left: 0.25rem;
+    width: 100%;
 }
 
 .experience-details > h6 {
@@ -74,8 +76,50 @@
 
 .experience-details > h5 {
     font-family: var(--primaryFont);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 600;
+    margin-top: 0.2rem;
+}
+
+.experience-desc {
+    font-family: var(--primaryFont);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+}
+
+.experience-descList {
+    margin: 0.75rem 0 0 1rem;
+    padding: 0;
+    font-family: var(--primaryFont);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.experience-meta {
+    margin-top: 0.75rem;
+}
+
+.experience-metaLabel {
+    font-family: var(--primaryFont);
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.experience-tag {
+    font-family: var(--primaryFont);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
 }
 
 .experience-image {
@@ -92,15 +136,49 @@
     pointer-events: none;
 }
 
+.experience-categoryBar {
+    width: 100%;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+}
 
+.experience-categoryBtn {
+    font-family: var(--primaryFont);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
 
+.experience-categoryBtn:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
 
+.experience-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
 
+.experience-sectionTitle {
+    font-family: var(--primaryFont);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
 
 @media (min-width: 992px) and (max-width: 1380px) {
 
 }
-
 
 @media screen and (max-width: 992px) {
     .experience {
@@ -112,14 +190,14 @@
     .experience-description {
         flex: 1;
         margin: auto;
-    }    
+    }
     .experience-description > h1{
         font-size: 3.2rem;
     }
     .experience-card {
         width: 100%;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
+        padding: 1.25rem;
+        margin-bottom: 1.25rem;
     }
 }
 
@@ -134,28 +212,26 @@
     }
     .experience-card {
         padding: 1rem;
-        margin-bottom: 1.5rem;
-        height: 130px;
+        margin-bottom: 1.25rem;
     }
-    .expcard-img {
-        border-radius: 50%;
+    .expcard-icon {
         width: 45px;
         height: 45px;
     }
-    
-    .expcard-img > img {
-        width: 30px;
+    .expcard-iconSvg {
+        width: 24px;
+        height: 24px;
     }
     .experience-details > h6 {
         font-size: 0.85rem;
         margin-bottom: 0.45rem;
     }
-    
+
     .experience-details > h4 {
         font-size: 1.125rem;
         line-height: 126%;
     }
-    
+
     .experience-details > h5 {
         font-size: 1.05rem;
         line-height: 126%;
@@ -171,13 +247,45 @@
 @media screen and (max-width: 400px) {
 
 }
-  
-@media only screen and (min-device-width: 320px) and (max-device-width: 
+
+@media only screen and (min-device-width: 320px) and (max-device-width:
   480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
 
 }
 
-
 @media only screen and (device-width: 768px) {
 
+}
+
+.experience--viewAll {
+    width: 100%;
+    padding: 2rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.experience--viewAll a button {
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: inherit;
+    border-radius: 45px;
+    font-size: 1.05rem;
+    font-family: var(--primaryFont);
+    font-weight: 500;
+    padding-left: 1.5rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .experience--viewAll {
+        position: relative;
+        margin-top: 2rem;
+        justify-content: center;
+    }
 }

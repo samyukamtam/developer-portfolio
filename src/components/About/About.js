@@ -19,7 +19,15 @@ function About() {
             <div className="about-body">
                 <div className="about-description">
                     <h2 style={{color: theme.primary}}>{aboutData.title}</h2>
-                    <p style={{color:theme.tertiary80}}>{aboutData.description1}<br/><br/>{aboutData.description2}</p>
+                    <div className="about-paragraphs" style={{color:theme.tertiary80}}>
+                        {aboutData.description1 && (
+                            <p className="about-paragraph">{aboutData.description1}</p>
+                        )}
+                        {aboutData.description2 &&
+                            aboutData.description2.split('\n\n').map((para, idx) => (
+                                <p key={idx} className="about-paragraph">{para}</p>
+                            ))}
+                    </div>
                 </div>
                 <div className="about-img">
                     <img 

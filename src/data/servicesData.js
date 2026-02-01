@@ -1,77 +1,41 @@
 /* eslint-disable */
-import { BiShoppingBag, BiPencil } from "react-icons/bi";
-import { BsCodeSlash, BsClipboardData } from "react-icons/bs";
-import { AiOutlineMail, AiFillAudio } from "react-icons/ai";
-import { FaInternetExplorer,  FaChalkboardTeacher, FaCameraRetro, FaPinterest, FaVideo, FaTabletAlt, FaRegNewspaper } from "react-icons/fa";
-
- 
+import { FaChalkboardTeacher, FaUsers, FaBullhorn, FaUserTie, FaClipboardList } from "react-icons/fa";
 
 export const servicesData = [
-    // {
-    //     id: 1,
-    //     title: 'Marketing',
-    //     icon: <BiShoppingBag/>
-    // },
+    {
+        id: 1,
+        title: 'Teaching Assistant — Haptics and Telerobotics',
+        date: "Fall '25",
+        description: 'Supported course delivery and assisted students with lab work and assignments.',
+        icon: <FaChalkboardTeacher />,
+    },
     {
         id: 2,
-        title: 'Content Writing',
-        icon: <BiPencil /> 
+        title: 'Joint Secretary & Dance Head — Swaranjali',
+        date: '2021–2023',
+        description: 'Co-led event planning and performances for the classical arts club.',
+        icon: <FaUsers />,
     },
     {
         id: 3,
-        title: 'Email Marketing',
-        icon: <AiOutlineMail />
-    },
-    // {
-    //     id: 4,
-    //     title: 'Internet Research',
-    //     icon: <FaInternetExplorer />
-    // },
-    // {
-    //     id: 5,
-    //     title: 'Tutoring',
-    //     icon: <FaChalkboardTeacher />
-    // },
-
-    {
-        id: 6,
-        title: 'Web Design',
-        icon: <BsCodeSlash />
+        title: 'Joint Secretary & Media Head — Rotaract Club',
+        date: '2020–2022',
+        description: 'Managed communications and media for club initiatives and outreach.',
+        icon: <FaBullhorn />,
     },
     {
-        id: 7,
-        title: 'Photography',
-        icon: <FaCameraRetro />
+        id: 4,
+        title: 'Internship Drive Head — Launchpad Entrepreneurship Cell',
+        date: 'Mar 2022',
+        description: 'Coordinated internship outreach and program logistics.',
+        icon: <FaClipboardList />,
     },
-    // {
-    //     id: 8,
-    //     title: 'Pinterest Virtual Assistant',
-    //     icon: <FaPinterest />
-    // }, 
     {
-        id: 9,
-        title: 'Video Editing',
-        icon: <FaVideo />
-    },
-    // {
-    //     id: 10,
-    //     title: 'Data Entry', 
-    //     icon: <BsClipboardData />
-    // },
-    {
-        id: 11,
-        title: 'Ebook Writing',
-        icon: <FaTabletAlt />
-    },
-    // {
-    //     id: 12,
-    //     title: 'Audio Transcription',
-    //     icon: <AiFillAudio />
-    // },
-    {
-        id: 13,
-        title: 'Blog Posting',
-        icon: <FaRegNewspaper />
+        id: 5,
+        title: 'Head Girl — FIITJEE World School',
+        date: '2017–2018',
+        description: 'Represented the student body and supported school leadership initiatives.',
+        icon: <FaUserTie />,
     },
 
 ]
